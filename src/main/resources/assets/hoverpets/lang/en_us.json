@@ -1,0 +1,29 @@
+{
+  "itemGroup.hoverpets.hoverpets": "Hover Pets",
+
+  "entity.hoverpets.blaze_pet": "Blaze Pet",
+  "item.hoverpets.blaze_pet": "Blaze Pet",
+  "entity.hoverpets.ocelot_pet": "Ocelot Pet",
+  "item.hoverpets.ocelot_pet": "Ocelot Pet",
+  "entity.hoverpets.chicken_pet": "Chicken Pet",
+  "item.hoverpets.chicken_pet": "Chicken Pet",
+  "entity.hoverpets.cow_pet": "Cow Pet",
+  "item.hoverpets.cow_pet": "Cow Pet",
+  "entity.hoverpets.fox_pet": "Fox Pet",
+  "item.hoverpets.fox_pet": "Fox Pet",
+  "entity.hoverpets.glow_squid_pet": "Glow Squid Pet",
+  "item.hoverpets.glow_squid_pet": "Glow Squid Pet",
+  "entity.hoverpets.pufferfish_pet": "Pufferfish Pet",
+  "item.hoverpets.pufferfish_pet": "Pufferfish Pet",
+
+  "tooltip.hoverpets.shift": "Hold Shift for More Info",
+  "tooltip.hoverpets.one_pet": "You may only have one pet at a time!",
+
+  "tooltip.hoverpets.blaze_pet": "Instantly extinguishes the player when on fire",
+  "tooltip.hoverpets.ocelot_pet": "Grants permanent Speed III",
+  "tooltip.hoverpets.chicken_pet": "Chance to pluck a random seed from the ground",
+  "tooltip.hoverpets.cow_pet": "Clears negative status effects every minute",
+  "tooltip.hoverpets.fox_pet": "Hunts nearby chickens and rabbits",
+  "tooltip.hoverpets.glow_squid_pet": "Emits glowing particles and glows",
+  "tooltip.hoverpets.pufferfish_pet": "Poisons your attackers when you are below 3 hearts"
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "hoverpets",
+  "version": "${version}",
+
+  "name": "Hover Pets",
+  "description": "Craftable pets that grant unique perks!",
+  "authors": [
+    "Safro"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "GPLv3",
+  "icon": "assets/hoverpets/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "safro.hover.pets.HoverPets"
+    ],
+    "client": [
+      "safro.hover.pets.HoverPetsClient"
+    ]
+  },
+  "mixins": [
+    "hoverpets.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "accessWidener": "hoverpets.accesswidener"
+}
