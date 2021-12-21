@@ -1,9 +1,9 @@
-# Fabric Example Mod
+# Hover Pets
 
-## Setup
+## About
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+Hover Pets is an easy to use pet mod built for the [Fabric](https://fabricmc.net/) modloader. Hover Pets supports 1.18+ and adds a variety of different floating pets to your game. 
 
-## License
+## Wiki
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+Check out the wiki tab to find information on pets. Mod Developers can also find a basic guide on how to create an addon with your own pets.
