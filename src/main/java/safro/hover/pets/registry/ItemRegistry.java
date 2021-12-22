@@ -19,6 +19,7 @@ public class ItemRegistry {
     public static final Item FOX_PET = register("fox_pet", new PetItem(EntityRegistry.FOX_PET, simple()).setPerkTooltip("tooltip.hoverpets.fox_pet"));
     public static final Item GLOW_SQUID_PET = register("glow_squid_pet", new PetItem(EntityRegistry.GLOW_SQUID_PET, simple()).setPerkTooltip("tooltip.hoverpets.glow_squid_pet"));
     public static final Item PUFFERFISH_PET = register("pufferfish_pet", new PetItem(EntityRegistry.PUFFERFISH_PET, simple()).setPerkTooltip("tooltip.hoverpets.pufferfish_pet"));
+    public static final Item MAGMA_CUBE_PET = register("magma_cube_pet", new PetItem(EntityRegistry.MAGMA_CUBE_PET, simple()).setPerkTooltip("tooltip.hoverpets.magma_cube_pet"));
 
     public static Item.Settings simple() {
         return new Item.Settings().group(HoverPets.ITEMGROUP).maxCount(1);

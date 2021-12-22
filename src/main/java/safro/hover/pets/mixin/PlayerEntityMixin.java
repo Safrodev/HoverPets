@@ -1,5 +1,7 @@
 package safro.hover.pets.mixin;
 
+import com.mojang.authlib.GameProfile;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
@@ -8,9 +10,11 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.sound.SoundEvents;
-import org.spongepowered.asm.mixin.Final;
+import net.minecraft.tag.FluidTags;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -21,11 +25,16 @@ import safro.hover.pets.base.PetAccess;
 import safro.hover.pets.util.PetUtil;
 
 @Mixin(PlayerEntity.class)
-public class PlayerEntityMixin implements PetAccess {
-    @Shadow @Final private PlayerInventory inventory;
+public abstract class PlayerEntityMixin extends LivingEntity implements PetAccess {
+    @Shadow private boolean reducedDebugInfo;
     private static final TrackedData<Boolean> HAS_PET;
     // Booleans for pet checks
     private boolean hasPufferfish = false;
+    private boolean hasMagmaCube = false;
+
+    public PlayerEntityMixin(World world, BlockPos pos, float yaw, GameProfile profile) {
+        super(EntityType.PLAYER, world);
+    }
 
     @Inject(method = "initDataTracker", at = @At("TAIL"))
     private void initPetData(CallbackInfo ci) {
@@ -44,12 +53,24 @@ public class PlayerEntityMixin implements PetAccess {
         }
     }
 
+    @Override
+    public boolean canWalkOnFluid(Fluid fluid) {
+        if (hasMagmaCube && PetUtil.hasPet((PlayerEntity) (Object) this)) {
+            return fluid.isIn(FluidTags.LAVA);
+        } else
+            return super.canWalkOnFluid(fluid);
+    }
+
     public TrackedData<Boolean> get() {
         return HAS_PET;
     }
 
     public void setPufferfish(boolean bl) {
         hasPufferfish = bl;
+    }
+
+    public void setMagmaCube(boolean bl) {
+        hasMagmaCube = bl;
     }
 
     static {

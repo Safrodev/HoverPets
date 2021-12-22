@@ -15,6 +15,8 @@
   "item.hoverpets.glow_squid_pet": "Glow Squid Pet",
   "entity.hoverpets.pufferfish_pet": "Pufferfish Pet",
   "item.hoverpets.pufferfish_pet": "Pufferfish Pet",
+  "entity.hoverpets.magma_cube_pet": "Magma Cube Pet",
+  "item.hoverpets.magma_cube_pet": "Magma Cube Pet",
 
   "tooltip.hoverpets.shift": "Hold Shift for More Info",
   "tooltip.hoverpets.one_pet": "You may only have one pet at a time!",
@@ -25,5 +27,6 @@
   "tooltip.hoverpets.cow_pet": "Clears negative status effects every minute",
   "tooltip.hoverpets.fox_pet": "Hunts nearby chickens and rabbits",
   "tooltip.hoverpets.glow_squid_pet": "Emits glowing particles and glows",
-  "tooltip.hoverpets.pufferfish_pet": "Poisons your attackers when you are below 3 hearts"
+  "tooltip.hoverpets.pufferfish_pet": "Poisons your attackers when you are below 3 hearts",
+  "tooltip.hoverpets.magma_cube_pet": "Allows you to walk on lava"
 }

@@ -24,6 +24,7 @@ public class EntityRegistry {
     public static final EntityType<FoxPet> FOX_PET = register("fox_pet", FabricEntityTypeBuilder.create(SpawnGroup.MISC, FoxPet::new).fireImmune().dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
     public static final EntityType<GlowSquidPet> GLOW_SQUID_PET = register("glow_squid_pet", FabricEntityTypeBuilder.create(SpawnGroup.MISC, GlowSquidPet::new).fireImmune().dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
     public static final EntityType<PufferfishPet> PUFFERFISH_PET = register("pufferfish_pet", FabricEntityTypeBuilder.create(SpawnGroup.MISC, PufferfishPet::new).fireImmune().dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
+    public static final EntityType<MagmaCubePet> MAGMA_CUBE_PET = register("magma_cube_pet", FabricEntityTypeBuilder.create(SpawnGroup.MISC, MagmaCubePet::new).fireImmune().dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
 
     private static <T extends Entity> EntityType<T> register(String name, EntityType<T> type) {
         ENTITY_TYPES.put(type, new Identifier(HoverPets.MODID, name));
@@ -40,5 +41,6 @@ public class EntityRegistry {
         FabricDefaultAttributeRegistry.register(FOX_PET, FoxPet.createFoxPetAttributes());
         FabricDefaultAttributeRegistry.register(GLOW_SQUID_PET, GlowSquidPet.createPetAttributes());
         FabricDefaultAttributeRegistry.register(PUFFERFISH_PET, PufferfishPet.createPetAttributes());
+        FabricDefaultAttributeRegistry.register(MAGMA_CUBE_PET, MagmaCubePet.createPetAttributes());
     }
 }
