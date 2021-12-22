@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#M#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:gunpowder"
+    },
+    "M": {
+      "item": "minecraft:flint_and_steel"
+    }
+  },
+  "result": {
+    "item": "hoverpets:creeper_pet"
+  }
+}

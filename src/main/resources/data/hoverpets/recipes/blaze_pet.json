@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#M#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:blaze_rod"
+    },
+    "M": {
+      "item": "minecraft:lava_bucket"
+    }
+  },
+  "result": {
+    "item": "hoverpets:blaze_pet"
+  }
+}

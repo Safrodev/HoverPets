@@ -20,6 +20,7 @@
   "entity.hoverpets.creeper_pet": "Creeper Pet",
   "item.hoverpets.creeper_pet": "Creeper Pet",
   "item.hoverpets.panda_pet": "Panda Pet",
+  "entity.hoverpets.panda_pet": "Panda Pet",
 
   "tooltip.hoverpets.shift": "Hold Shift for More Info",
   "tooltip.hoverpets.one_pet": "You may only have one pet at a time!",

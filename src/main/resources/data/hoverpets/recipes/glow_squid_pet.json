@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#M#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:glow_ink_sac"
+    },
+    "M": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "hoverpets:glow_squid_pet"
+  }
+}

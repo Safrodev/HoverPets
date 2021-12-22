@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#M#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:pufferfish"
+    },
+    "M": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "hoverpets:pufferfish_pet"
+  }
+}
