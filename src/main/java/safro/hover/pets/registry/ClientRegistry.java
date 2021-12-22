@@ -21,6 +21,8 @@ public class ClientRegistry {
         EntityRendererRegistry.register(EntityRegistry.GLOW_SQUID_PET, GlowPetRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.PUFFERFISH_PET, BasicPetRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.MAGMA_CUBE_PET, BasicPetRenderer::new);
+        EntityRendererRegistry.register(EntityRegistry.CREEPER_PET, BasicPetRenderer::new);
+        EntityRendererRegistry.register(EntityRegistry.PANDA_PET, BasicPetRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(PET_LAYER, BasicPetModel::getTexturedModelData);
     }

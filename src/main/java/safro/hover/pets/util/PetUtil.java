@@ -13,4 +13,10 @@ public class PetUtil {
     public static boolean hasPet(PlayerEntity player) {
         return player.getDataTracker().get(((PetAccess)player).get());
     }
+
+    /*
+    if (!world1.isClient) {
+         FabricDimensions.teleport(this, (ServerWorld) world1, (new TeleportTarget(new Vec3d((double)this.getX() + 0.5D, (double)this.getY(), (double)this.getZ() + 0.5D), this.getVelocity(), this.getYaw(), this.getPitch())));
+       }
+     */
 }

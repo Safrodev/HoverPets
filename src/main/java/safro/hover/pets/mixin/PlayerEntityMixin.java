@@ -1,6 +1,7 @@
 package safro.hover.pets.mixin;
 
 import com.mojang.authlib.GameProfile;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -14,7 +15,9 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
+import net.minecraft.world.explosion.Explosion;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -31,6 +34,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements PetAcces
     // Booleans for pet checks
     private boolean hasPufferfish = false;
     private boolean hasMagmaCube = false;
+    private boolean hasCreeper = false;
 
     public PlayerEntityMixin(World world, BlockPos pos, float yaw, GameProfile profile) {
         super(EntityType.PLAYER, world);
@@ -53,6 +57,17 @@ public abstract class PlayerEntityMixin extends LivingEntity implements PetAcces
         }
     }
 
+    @Inject(method = "remove", at = @At("HEAD"))
+    private void creeperPet(RemovalReason reason, CallbackInfo ci) {
+        PlayerEntity p = (PlayerEntity) (Object) this;
+        if (p.isDead() && !world.isClient) {
+            if (hasCreeper && PetUtil.hasPet(p)) {
+                Explosion.DestructionType destructionType = this.world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING) ? Explosion.DestructionType.DESTROY : Explosion.DestructionType.NONE;
+                this.world.createExplosion(p, p.getX(), p.getY(), p.getZ(), 3, destructionType);
+            }
+        }
+    }
+
     @Override
     public boolean canWalkOnFluid(Fluid fluid) {
         if (hasMagmaCube && PetUtil.hasPet((PlayerEntity) (Object) this)) {
@@ -71,6 +86,10 @@ public abstract class PlayerEntityMixin extends LivingEntity implements PetAcces
 
     public void setMagmaCube(boolean bl) {
         hasMagmaCube = bl;
+    }
+
+    public void setCreeper(boolean bl) {
+        hasCreeper = bl;
     }
 
     static {

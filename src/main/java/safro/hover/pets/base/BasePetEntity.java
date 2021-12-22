@@ -1,5 +1,6 @@
 package safro.hover.pets.base;
 
+import net.fabricmc.fabric.api.dimension.v1.FabricDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.FollowOwnerGoal;
 import net.minecraft.entity.ai.goal.LookAroundGoal;
@@ -16,8 +17,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+import safro.hover.pets.util.RespawnAccess;
 
 public abstract class BasePetEntity extends TameableEntity {
     private int bobbingage;
@@ -76,6 +80,12 @@ public abstract class BasePetEntity extends TameableEntity {
             PlayerEntity owner = (PlayerEntity) this.getOwner();
             owner.getDataTracker().set(((PetAccess)owner).get(), true);
             this.perk(world, owner);
+
+            if (!world.isClient) {
+                if (((RespawnAccess) owner).isReadyForRespawn()) {
+                    this.teleport(owner.getX(), owner.getY(), owner.getZ(), false);
+                }
+            }
         }
     }
 
@@ -103,7 +113,7 @@ public abstract class BasePetEntity extends TameableEntity {
     /**
      * Used for selecting the pet item that drops when the pet is despawned
      *
-     * @return - Returns an Itemstack (Usually new ItemStack(...);)
+     * @return - Returns an ItemStack (Usually new ItemStack(...);)
      */
     public abstract ItemStack getPetStack();
 

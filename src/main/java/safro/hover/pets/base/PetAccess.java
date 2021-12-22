@@ -7,4 +7,5 @@ public interface PetAccess {
 
     void setPufferfish(boolean bl);
     void setMagmaCube(boolean bl);
+    void setCreeper(boolean bl);
 }
