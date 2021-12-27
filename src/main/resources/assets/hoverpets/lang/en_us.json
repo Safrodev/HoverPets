@@ -21,6 +21,8 @@
   "item.hoverpets.creeper_pet": "Creeper Pet",
   "item.hoverpets.panda_pet": "Panda Pet",
   "entity.hoverpets.panda_pet": "Panda Pet",
+  "entity.hoverpets.witch_pet": "Witch Pet",
+  "item.hoverpets.witch_pet": "Witch Pet",
 
   "tooltip.hoverpets.shift": "Hold Shift for More Info",
   "tooltip.hoverpets.one_pet": "You may only have one pet at a time!",
@@ -34,5 +36,6 @@
   "tooltip.hoverpets.pufferfish_pet": "Poisons your attackers when you are below 3 hearts",
   "tooltip.hoverpets.magma_cube_pet": "Allows you to walk on lava",
   "tooltip.hoverpets.creeper_pet": "Creates an explosion where you die",
-  "tooltip.hoverpets.panda_pet": "Randomly replenishes a portion of your hunger"
+  "tooltip.hoverpets.panda_pet": "Randomly replenishes a portion of your hunger",
+  "tooltip.hoverpets.witch_pet": "Splashes Villagers, Iron Golems, and Players with healing potions"
 }
