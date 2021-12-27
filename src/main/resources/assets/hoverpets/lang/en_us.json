@@ -34,5 +34,5 @@
   "tooltip.hoverpets.pufferfish_pet": "Poisons your attackers when you are below 3 hearts",
   "tooltip.hoverpets.magma_cube_pet": "Allows you to walk on lava",
   "tooltip.hoverpets.creeper_pet": "Creates an explosion where you die",
-  "tooltip.hoverpets.panda_pet": "Allows you to eat bamboo as food"
+  "tooltip.hoverpets.panda_pet": "Randomly replenishes a portion of your hunger"
 }
