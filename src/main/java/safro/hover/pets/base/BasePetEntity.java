@@ -1,6 +1,5 @@
 package safro.hover.pets.base;
 
-import net.fabricmc.fabric.api.dimension.v1.FabricDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.FollowOwnerGoal;
 import net.minecraft.entity.ai.goal.LookAroundGoal;
@@ -17,8 +16,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import safro.hover.pets.util.RespawnAccess;
@@ -98,7 +95,7 @@ public abstract class BasePetEntity extends TameableEntity {
     }
 
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
-        if (this.isOwner(player)) {
+        if (this.isOwner(player) && !player.isSneaking()) {
             this.onRemoved(world, player);
             this.remove(RemovalReason.DISCARDED);
             if (!player.getInventory().insertStack(getPetStack())) {

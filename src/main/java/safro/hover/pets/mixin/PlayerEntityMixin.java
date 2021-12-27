@@ -1,7 +1,6 @@
 package safro.hover.pets.mixin;
 
 import com.mojang.authlib.GameProfile;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -19,7 +18,6 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -29,7 +27,6 @@ import safro.hover.pets.util.PetUtil;
 
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntityMixin extends LivingEntity implements PetAccess {
-    @Shadow private boolean reducedDebugInfo;
     private static final TrackedData<Boolean> HAS_PET;
     // Booleans for pet checks
     private boolean hasPufferfish = false;
@@ -74,6 +71,17 @@ public abstract class PlayerEntityMixin extends LivingEntity implements PetAcces
             return fluid.isIn(FluidTags.LAVA);
         } else
             return super.canWalkOnFluid(fluid);
+    }
+
+    @Override
+    public boolean isFireImmune() {
+        PlayerEntity p = (PlayerEntity) (Object) this;
+        if (hasMagmaCube && PetUtil.hasPet(p)) {
+            if (p.getFluidHeight(FluidTags.LAVA) > 0.0D) {
+                return true;
+            }
+        }
+        return super.isFireImmune();
     }
 
     public TrackedData<Boolean> get() {
