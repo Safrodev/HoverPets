@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#N#",
+    "NMN",
+    "#N#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:glass_bottle"
+    },
+    "M": {
+      "item": "minecraft:glistering_melon_slice"
+    },
+    "N": {
+      "item": "minecraft:nether_wart"
+    }
+  },
+  "result": {
+    "item": "hoverpets:witch_pet"
+  }
+}
