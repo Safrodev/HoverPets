@@ -5,7 +5,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import safro.hover.pets.api.BasePetEntity;
-import safro.hover.pets.api.PetAccess;
 import safro.hover.pets.registry.ItemRegistry;
 
 public class CreeperPet extends BasePetEntity {
@@ -21,11 +20,5 @@ public class CreeperPet extends BasePetEntity {
 
     @Override
     public void tickPerk(World world, PlayerEntity player) {
-        ((PetAccess)player).setCreeper(true);
-    }
-
-    @Override
-    public void onRemoved(World world, PlayerEntity player) {
-        ((PetAccess)player).setCreeper(false);
     }
 }

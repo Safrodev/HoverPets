@@ -29,10 +29,6 @@ dependencies {
 	include "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cca_version}"
 }
 
-loom {
-	accessWidenerPath = file("src/main/resources/hoverpets.accesswidener")
-}
-
 processResources {
 	inputs.property "version", project.version
 

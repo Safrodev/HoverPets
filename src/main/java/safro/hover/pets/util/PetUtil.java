@@ -2,7 +2,7 @@ package safro.hover.pets.util;
 
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
-import safro.hover.pets.api.PetAccess;
+import safro.hover.pets.api.BasePetEntity;
 import safro.hover.pets.registry.ComponentsRegistry;
 
 public class PetUtil {
@@ -32,15 +32,25 @@ public class PetUtil {
         return source.isFire() || source.isMagic() || source.isExplosive() || source.isFallingBlock() || source.isFromFalling() || source.isProjectile() || source.bypassesArmor();
     }
 
+    /**
+     * Sets the provided Player's pet ID with the provided ID
+     *
+     * @param player - Pet Owner whose ID is being set
+     * @param id - The new ID to be set
+     */
     public static void setPet(PlayerEntity player, int id) {
         ComponentsRegistry.PET_COMPONENT.get(player).setPetId(id);
     }
 
-    public static void setRemovedPet(PlayerEntity player) {
-        player.getDataTracker().set(((PetAccess)player).get(), false);
-    }
-
-    public static void setHasPet(PlayerEntity player) {
-        player.getDataTracker().set(((PetAccess)player).get(), true);
+    /**
+     * Returns the current pet of the Player
+     * Note: You should always use the hasPet method before running this to prevent null exceptions
+     * @see #hasPet(PlayerEntity)
+     *
+     * @param player - The owner whose pet is being returned
+     * @return - A pet entity object
+     */
+    public static BasePetEntity getPet(PlayerEntity player) {
+        return ComponentsRegistry.PET_COMPONENT.get(player).getPet();
     }
 }
