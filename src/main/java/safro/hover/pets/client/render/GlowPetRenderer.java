@@ -2,7 +2,7 @@ package safro.hover.pets.client.render;
 
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.util.math.BlockPos;
-import safro.hover.pets.base.BasePetEntity;
+import safro.hover.pets.api.BasePetEntity;
 
 public class GlowPetRenderer extends BasicPetRenderer {
 

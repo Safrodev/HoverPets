@@ -16,7 +16,7 @@ import net.minecraft.potion.Potions;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import safro.hover.pets.base.BasePetEntity;
+import safro.hover.pets.api.BasePetEntity;
 import safro.hover.pets.registry.ItemRegistry;
 
 public class WitchPet extends BasePetEntity implements RangedAttackMob {
@@ -60,7 +60,7 @@ public class WitchPet extends BasePetEntity implements RangedAttackMob {
     }
 
     @Override
-    public void perk(World world, PlayerEntity player) {
+    public void tickPerk(World world, PlayerEntity player) {
 
     }
 }

@@ -6,8 +6,8 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.world.World;
-import safro.hover.pets.base.BasePetEntity;
-import safro.hover.pets.base.PetAccess;
+import safro.hover.pets.api.BasePetEntity;
+import safro.hover.pets.api.PetAccess;
 import safro.hover.pets.registry.ItemRegistry;
 
 public class MagmaCubePet extends BasePetEntity {
@@ -22,7 +22,7 @@ public class MagmaCubePet extends BasePetEntity {
     }
 
     @Override
-    public void perk(World world, PlayerEntity player) {
+    public void tickPerk(World world, PlayerEntity player) {
         ((PetAccess)player).setMagmaCube(true);
     }
 

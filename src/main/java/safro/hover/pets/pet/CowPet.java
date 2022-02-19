@@ -3,12 +3,11 @@ package safro.hover.pets.pet;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
-import safro.hover.pets.base.BasePetEntity;
+import safro.hover.pets.api.BasePetEntity;
 import safro.hover.pets.registry.ItemRegistry;
 
 import java.util.ArrayList;
@@ -27,7 +26,7 @@ public class CowPet extends BasePetEntity {
     private int cooldown;
 
     @Override
-    public void perk(World world, PlayerEntity player) {
+    public void tickPerk(World world, PlayerEntity player) {
         --cooldown;
         if (cooldown < 1) {
             if (!world.isClient) {

@@ -23,12 +23,19 @@
     ],
     "client": [
       "safro.hover.pets.HoverPetsClient"
+    ],
+    "cardinal-components-entity": [
+      "safro.hover.pets.registry.ComponentsRegistry"
     ]
   },
   "mixins": [
     "hoverpets.mixins.json"
   ],
-
+  "custom": {
+    "cardinal-components": [
+      "hoverpets:pet"
+    ]
+  },
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",

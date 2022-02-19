@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import safro.hover.pets.base.PetAccess;
+import safro.hover.pets.api.PetAccess;
 import safro.hover.pets.util.PetUtil;
 
 @Mixin(PlayerEntity.class)

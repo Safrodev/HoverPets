@@ -4,7 +4,7 @@ import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
-import safro.hover.pets.base.BasePetEntity;
+import safro.hover.pets.api.BasePetEntity;
 
 public class BasicPetModel extends EntityModel<BasePetEntity> {
 	private final ModelPart cube;

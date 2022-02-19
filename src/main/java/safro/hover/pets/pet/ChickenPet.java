@@ -1,6 +1,5 @@
 package safro.hover.pets.pet;
 
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -9,8 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import safro.hover.pets.HoverPets;
-import safro.hover.pets.base.BasePetEntity;
+import safro.hover.pets.api.BasePetEntity;
 import safro.hover.pets.registry.ItemRegistry;
 
 public class ChickenPet extends BasePetEntity {
@@ -27,7 +25,7 @@ public class ChickenPet extends BasePetEntity {
     private int cooldown;
 
     @Override
-    public void perk(World world, PlayerEntity player) {
+    public void tickPerk(World world, PlayerEntity player) {
         --cooldown;
         if (cooldown < 1) {
             BlockPos pos = player.getBlockPos();

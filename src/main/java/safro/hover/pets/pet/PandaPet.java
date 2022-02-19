@@ -4,7 +4,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import safro.hover.pets.base.BasePetEntity;
+import safro.hover.pets.api.BasePetEntity;
 import safro.hover.pets.registry.ItemRegistry;
 
 public class PandaPet extends BasePetEntity {
@@ -20,7 +20,7 @@ public class PandaPet extends BasePetEntity {
     }
 
     @Override
-    public void perk(World world, PlayerEntity player) {
+    public void tickPerk(World world, PlayerEntity player) {
         --cooldown;
         if (cooldown < 1) {
             if (player.canConsume(false)) {

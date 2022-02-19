@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import safro.hover.pets.HoverPets;
-import safro.hover.pets.base.BasePetEntity;
+import safro.hover.pets.api.BasePetEntity;
 import safro.hover.pets.client.model.BasicPetModel;
 import safro.hover.pets.registry.ClientRegistry;
 

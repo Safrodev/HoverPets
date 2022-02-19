@@ -4,7 +4,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import safro.hover.pets.HoverPets;
-import safro.hover.pets.base.PetItem;
+import safro.hover.pets.api.PetItem;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

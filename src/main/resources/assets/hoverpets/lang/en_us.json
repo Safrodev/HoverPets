@@ -37,5 +37,8 @@
   "tooltip.hoverpets.magma_cube_pet": "Allows you to walk on lava",
   "tooltip.hoverpets.creeper_pet": "Creates an explosion where you die",
   "tooltip.hoverpets.panda_pet": "Randomly replenishes a portion of your hunger",
-  "tooltip.hoverpets.witch_pet": "Splashes Villagers, Iron Golems, and Players with healing potions"
+  "tooltip.hoverpets.witch_pet": "Splashes Villagers, Iron Golems, and Players with healing potions",
+
+  "command.hoverpets.removepet": "Removed pet for %s",
+  "command.hoverpets.removepets": "Removed pets for %s Players"
 }
