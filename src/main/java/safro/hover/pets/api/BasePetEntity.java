@@ -14,7 +14,6 @@ import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.text.LiteralText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
@@ -139,4 +138,14 @@ public abstract class BasePetEntity extends TameableEntity {
      * @param player - A Player object (the pet owner)
      */
     public void onRemoved(World world, PlayerEntity player) {}
+
+    /**
+     * Called when the player pressed the 'pet key' while having a pet equipped
+     * Used for pets with perks that aren't called every tick
+     * NOTE: This method is called on the server
+     *
+     * @param world - The player's world
+     * @param player - The player with the pet
+     */
+    public void onPetKey(World world, PlayerEntity player) {}
 }

@@ -2,7 +2,7 @@ package safro.hover.pets.pet;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.world.World;
@@ -25,7 +25,7 @@ public class MagmaCubePet extends BasePetEntity {
     }
 
     @Override
-    public boolean canWalkOnFluid(Fluid fluid) {
+    public boolean canWalkOnFluid(FluidState fluid) {
         return fluid.isIn(FluidTags.LAVA);
     }
 }

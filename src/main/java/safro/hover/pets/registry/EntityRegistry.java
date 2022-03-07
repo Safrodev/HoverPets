@@ -28,6 +28,7 @@ public class EntityRegistry {
     public static final EntityType<CreeperPet> CREEPER_PET = register("creeper_pet", FabricEntityTypeBuilder.create(SpawnGroup.MISC, CreeperPet::new).fireImmune().dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
     public static final EntityType<PandaPet> PANDA_PET = register("panda_pet", FabricEntityTypeBuilder.create(SpawnGroup.MISC, PandaPet::new).fireImmune().dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
     public static final EntityType<WitchPet> WITCH_PET = register("witch_pet", FabricEntityTypeBuilder.create(SpawnGroup.MISC, WitchPet::new).fireImmune().dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
+    public static final EntityType<EndermanPet> ENDERMAN_PET = register("enderman_pet", FabricEntityTypeBuilder.create(SpawnGroup.MISC, EndermanPet::new).fireImmune().dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
 
     private static <T extends Entity> EntityType<T> register(String name, EntityType<T> type) {
         ENTITY_TYPES.put(type, new Identifier(HoverPets.MODID, name));
@@ -48,5 +49,6 @@ public class EntityRegistry {
         FabricDefaultAttributeRegistry.register(CREEPER_PET, CreeperPet.createPetAttributes());
         FabricDefaultAttributeRegistry.register(PANDA_PET, PandaPet.createPetAttributes());
         FabricDefaultAttributeRegistry.register(WITCH_PET, WitchPet.createPetAttributes());
+        FabricDefaultAttributeRegistry.register(ENDERMAN_PET, EndermanPet.createPetAttributes());
     }
 }

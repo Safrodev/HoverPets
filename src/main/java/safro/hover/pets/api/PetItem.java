@@ -65,12 +65,14 @@ public class PetItem extends Item {
     @Override
     @Environment(EnvType.CLIENT)
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if (this.perkLore != null) {
+        if (this.perkLore != null || this.abilityLore != null) {
             if (!Screen.hasShiftDown()) {
                 tooltip.add(new TranslatableText("tooltip.hoverpets.shift").formatted(Formatting.GRAY));
             } else {
-                tooltip.add(new LiteralText("Perk:").formatted(Formatting.WHITE));
-                tooltip.add(new LiteralText("" + Formatting.AQUA + I18n.translate(this.perkLore)));
+                if (this.perkLore != null) {
+                    tooltip.add(new LiteralText("Perk:").formatted(Formatting.WHITE));
+                    tooltip.add(new LiteralText("" + Formatting.AQUA + I18n.translate(this.perkLore)));
+                }
                 if (this.abilityLore != null) {
                     tooltip.add(new LiteralText("Ability:").formatted(Formatting.WHITE));
                     tooltip.add(new LiteralText("" + Formatting.YELLOW + I18n.translate(this.abilityLore)));

@@ -7,7 +7,6 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.Fluid;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
@@ -51,15 +50,6 @@ public abstract class PlayerEntityMixin extends LivingEntity {
                 this.world.createExplosion(p, p.getX(), p.getY(), p.getZ(), 3, destructionType);
             }
         }
-    }
-
-    @Override
-    public boolean canWalkOnFluid(Fluid fluid) {
-        PlayerEntity p = (PlayerEntity) (Object) this;
-        if (PetUtil.hasPet(p) && PetUtil.getPet(p) instanceof MagmaCubePet) {
-            return fluid.isIn(FluidTags.LAVA);
-        } else
-            return super.canWalkOnFluid(fluid);
     }
 
     @Override

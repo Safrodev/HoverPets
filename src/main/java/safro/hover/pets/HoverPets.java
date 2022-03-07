@@ -11,6 +11,7 @@ import org.apache.logging.log4j.Logger;
 import safro.hover.pets.command.RemovePetCommand;
 import safro.hover.pets.registry.EntityRegistry;
 import safro.hover.pets.registry.ItemRegistry;
+import safro.hover.pets.registry.NetworkRegistry;
 
 public class HoverPets implements ModInitializer {
 	public static final Logger LOGGER = LogManager.getLogger("hoverpets");
@@ -21,6 +22,7 @@ public class HoverPets implements ModInitializer {
 	public void onInitialize() {
 		EntityRegistry.init();
 		ItemRegistry.init();
+		NetworkRegistry.init();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
 			RemovePetCommand.register(dispatcher);

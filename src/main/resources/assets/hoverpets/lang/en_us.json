@@ -23,6 +23,8 @@
   "entity.hoverpets.panda_pet": "Panda Pet",
   "entity.hoverpets.witch_pet": "Witch Pet",
   "item.hoverpets.witch_pet": "Witch Pet",
+  "entity.hoverpets.enderman_pet": "Enderman Pet",
+  "item.hoverpets.enderman_pet": "Enderman Pet",
 
   "tooltip.hoverpets.shift": "Hold Shift for More Info",
   "tooltip.hoverpets.one_pet": "You may only have one pet at a time!",
@@ -38,7 +40,11 @@
   "tooltip.hoverpets.creeper_pet": "Creates an explosion where you die",
   "tooltip.hoverpets.panda_pet": "Randomly replenishes a portion of your hunger",
   "tooltip.hoverpets.witch_pet": "Splashes Villagers, Iron Golems, and Players with healing potions",
+  "tooltip.hoverpets.enderman_pet": "Teleports you 10 blocks forward when pressing the Pet Key. Cooldown: 5s",
 
   "command.hoverpets.removepet": "Removed pet for %s",
-  "command.hoverpets.removepets": "Removed pets for %s Players"
+  "command.hoverpets.removepets": "Removed pets for %s Players",
+
+  "key.hoverpets.pet_ability": "Use Pet Ability",
+  "category.hoverpets.hoverpets": "Hover Pets"
 }
