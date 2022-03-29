@@ -1,5 +1,6 @@
 package safro.hover.pets.api;
 
+import me.lucko.fabric.api.permissions.v0.Permissions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.FollowOwnerGoal;
 import net.minecraft.entity.ai.goal.LookAroundGoal;
@@ -16,6 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import safro.hover.pets.util.PetUtil;
@@ -69,6 +71,12 @@ public abstract class BasePetEntity extends TameableEntity {
         return super.damage(source, amount);
     }
 
+    @Override
+    public boolean isInsideWall() {
+        return false;
+    }
+
+    @Override
     public void tick() {
         ++bobbingage;
         super.tick();
@@ -148,4 +156,15 @@ public abstract class BasePetEntity extends TameableEntity {
      * @param player - The player with the pet
      */
     public void onPetKey(World world, PlayerEntity player) {}
+
+    /**
+     * Called when the player is about to summon in their pet using a PetItem
+     * Used for permission specific pets
+     * @param player - Player summoning pet
+     * @return - Returns true if this pet can be summoned by the player
+     */
+    public boolean canBeSummoned(PlayerEntity player) {
+        String type = Registry.ENTITY_TYPE.getId(this.getType()).getPath();
+        return Permissions.check(player, "hoverpets.allowed." + type, true);
+    }
 }

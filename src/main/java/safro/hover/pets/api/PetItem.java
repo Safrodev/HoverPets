@@ -37,13 +37,19 @@ public class PetItem extends Item {
         ItemStack stack = player.getStackInHand(hand);
         if (!world.isClient) {
             if (!PetUtil.hasPet(player)) {
-                BasePetEntity basePet = (BasePetEntity) basepet.create(world);
-                basePet.refreshPositionAndAngles(player.getX(), player.getY(), player.getZ(), 0.0F, 0.0F);
-                basePet.setOwner(player);
-                world.spawnEntity(basePet);
-                stack.decrement(1);
-                PetUtil.setPet(player, basePet.getId());
-                return TypedActionResult.consume(stack);
+                BasePetEntity basePet = basepet.create(world);
+                if (basePet.canBeSummoned(player)) {
+                    basePet.refreshPositionAndAngles(player.getX(), player.getY(), player.getZ(), 0.0F, 0.0F);
+                    basePet.setOwner(player);
+                    world.spawnEntity(basePet);
+                    stack.decrement(1);
+                    PetUtil.setPet(player, basePet.getId());
+                    return TypedActionResult.consume(stack);
+                } else {
+                    basePet = null;
+                    player.sendMessage(new TranslatableText("tooltip.hoverpets.no_permission").formatted(Formatting.RED), true);
+                    return TypedActionResult.fail(stack);
+                }
             } else {
                 player.sendMessage(new TranslatableText("tooltip.hoverpets.one_pet").formatted(Formatting.RED), true);
                 return TypedActionResult.fail(stack);

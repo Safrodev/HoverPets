@@ -8,6 +8,7 @@ import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.TranslatableText;
 import safro.hover.pets.registry.ComponentsRegistry;
+import safro.hover.pets.util.CompatUtil;
 import safro.hover.pets.util.PetUtil;
 
 import java.util.Collection;
@@ -16,7 +17,7 @@ public class RemovePetCommand {
 
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(CommandManager.literal("removePet")
-                .requires(source -> source.hasPermissionLevel(2))
+                .requires(CompatUtil.canRunCommand())
                 .then(CommandManager.argument("targets", EntityArgumentType.players())
                         .executes(context -> execute(context.getSource(), EntityArgumentType.getPlayers(context, "targets")))));
     }

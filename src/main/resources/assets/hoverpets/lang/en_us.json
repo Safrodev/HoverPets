@@ -28,6 +28,7 @@
 
   "tooltip.hoverpets.shift": "Hold Shift for More Info",
   "tooltip.hoverpets.one_pet": "You may only have one pet at a time!",
+  "tooltip.hoverpets.no_permission": "You don't have permission to use this pet!",
 
   "tooltip.hoverpets.blaze_pet": "Instantly extinguishes the player when on fire",
   "tooltip.hoverpets.ocelot_pet": "Grants permanent Speed III",

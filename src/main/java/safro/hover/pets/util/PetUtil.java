@@ -23,7 +23,7 @@ public class PetUtil {
      * @return - Returns true if the pet is immune to the give source, returns false if not
      */
     public static boolean isImmune(DamageSource source) {
-        if (source.isOutOfWorld() || source == DamageSource.IN_WALL) {
+        if (source.isOutOfWorld()) {
             return false;
         }
         if (source.getAttacker() instanceof PlayerEntity) {
