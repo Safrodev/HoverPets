@@ -26,6 +26,9 @@
     ],
     "cardinal-components-entity": [
       "safro.hover.pets.registry.ComponentsRegistry"
+    ],
+    "dynamiclights": [
+      "safro.hover.pets.compat.HPDynamicLights"
     ]
   },
   "mixins": [
