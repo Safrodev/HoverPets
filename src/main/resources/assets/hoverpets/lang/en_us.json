@@ -25,6 +25,8 @@
   "item.hoverpets.witch_pet": "Witch Pet",
   "entity.hoverpets.enderman_pet": "Enderman Pet",
   "item.hoverpets.enderman_pet": "Enderman Pet",
+  "entity.hoverpets.slime_pet": "Slime Pet",
+  "item.hoverpets.slime_pet": "Slime Pet",
 
   "tooltip.hoverpets.shift": "Hold Shift for More Info",
   "tooltip.hoverpets.one_pet": "You may only have one pet at a time!",

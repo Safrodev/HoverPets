@@ -24,6 +24,7 @@ public class ItemRegistry {
     public static final Item PANDA_PET = register("panda_pet", new PetItem(EntityRegistry.PANDA_PET, simple()).setPerkTooltip("tooltip.hoverpets.panda_pet"));
     public static final Item WITCH_PET = register("witch_pet", new PetItem(EntityRegistry.WITCH_PET, simple()).setPerkTooltip("tooltip.hoverpets.witch_pet"));
     public static final Item ENDERMAN_PET = register("enderman_pet", new PetItem(EntityRegistry.ENDERMAN_PET, simple()).setAbilityTooltip("tooltip.hoverpets.enderman_pet"));
+//    public static final Item SLIME_PET = register("slime_pet", new PetItem(EntityRegistry.SLIME_PET, simple()).setAbilityTooltip("tooltip.hoverpets.slime_pet"));
 
     public static Item.Settings simple() {
         return new Item.Settings().group(HoverPets.ITEMGROUP).maxCount(1);

@@ -25,6 +25,7 @@ public class ClientRegistry {
         EntityRendererRegistry.register(EntityRegistry.PANDA_PET, BasicPetRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.WITCH_PET, BasicPetRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.ENDERMAN_PET, BasicPetRenderer::new);
+    //    EntityRendererRegistry.register(EntityRegistry.SLIME_PET, BasicPetRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(PET_LAYER, BasicPetModel::getTexturedModelData);
     }
