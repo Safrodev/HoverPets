@@ -6,7 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.TranslatableText;
+import net.minecraft.text.Text;
 import safro.hover.pets.registry.ComponentsRegistry;
 import safro.hover.pets.util.CompatUtil;
 import safro.hover.pets.util.PetUtil;
@@ -31,9 +31,9 @@ public class RemovePetCommand {
         }
 
         if (players.size() == 1) {
-            source.sendFeedback(new TranslatableText("command.hoverpets.removepet", players.iterator().next().getDisplayName()), true);
+            source.sendFeedback(Text.translatable("command.hoverpets.removepet", players.iterator().next().getDisplayName()), true);
         } else {
-            source.sendFeedback(new TranslatableText("command.hoverpets.removepets", players.size()), true);
+            source.sendFeedback(Text.translatable("command.hoverpets.removepets", players.size()), true);
         }
         return players.size();
     }

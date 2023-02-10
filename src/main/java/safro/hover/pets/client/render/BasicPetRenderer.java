@@ -5,7 +5,7 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.LivingEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
@@ -29,7 +29,7 @@ public class BasicPetRenderer extends LivingEntityRenderer<BasePetEntity, BasicP
         float h = getYOffset(entity, g);
         matrixStack.translate(0.0D, (double)(1.5F + h / 2.0F), 0.0D);
         if (entity.getOwner() != null && entity.getOwner() instanceof PlayerEntity player) {
-            this.renderLabelIfPresent(entity, new LiteralText(player.getDisplayName().asString() + "'s Pet"), matrixStack, vertexConsumerProvider, i);
+            this.renderLabelIfPresent(entity, Text.literal(player.getDisplayName().getContent() + "'s Pet"), matrixStack, vertexConsumerProvider, i);
         }
         super.render(entity, f, g, matrixStack, vertexConsumerProvider, i);
     }

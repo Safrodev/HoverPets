@@ -25,7 +25,8 @@ public class FoxPet extends BasePetEntity {
         super(entityType, world);
     }
 
-    protected void initGoals() {
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	protected void initGoals() {
         this.goalSelector.add(1, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
         this.goalSelector.add(2, new FoxPet.AttackGoal(1.2000000476837158D, true));
         this.goalSelector.add(10, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
