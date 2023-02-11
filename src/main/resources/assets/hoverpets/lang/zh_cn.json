@@ -27,8 +27,12 @@
   "item.hoverpets.enderman_pet": "末影人",
   "entity.hoverpets.slime_pet": "史莱姆",
   "item.hoverpets.slime_pet": "史莱姆",
+  
+  "entity.hoverpets.pet_name.suffix": "的宠物",
 
   "tooltip.hoverpets.shift": "按住 Shift 以获取更多信息",
+  "tooltip.hoverpets.shift.perk": "能力: ",
+  "tooltip.hoverpets.shift.ability": "技能: ",
   "tooltip.hoverpets.one_pet": "一次只能养一只宠物！",
   "tooltip.hoverpets.no_permission": "你没有权限使用这只宠物！",
 
