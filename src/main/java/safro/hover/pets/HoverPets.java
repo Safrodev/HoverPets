@@ -2,7 +2,7 @@ package safro.hover.pets;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
@@ -24,9 +24,7 @@ public class HoverPets implements ModInitializer {
 		ItemRegistry.init();
 		NetworkRegistry.init();
 
-		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
-			RemovePetCommand.register(dispatcher);
-		});
+		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated, env) -> RemovePetCommand.register(dispatcher));
 	}
 
 }

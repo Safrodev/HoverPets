@@ -1,7 +1,9 @@
 package safro.hover.pets.api;
 
 import me.lucko.fabric.api.permissions.v0.Permissions;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.FollowOwnerGoal;
 import net.minecraft.entity.ai.goal.LookAroundGoal;
 import net.minecraft.entity.ai.goal.LookAtEntityGoal;
@@ -52,6 +54,10 @@ public abstract class BasePetEntity extends TameableEntity {
 
     public boolean isPushedByFluids() {
         return false;
+    }
+
+    public boolean collidesWith(Entity entity) {
+        return !this.hasOwner() || !(entity instanceof LivingEntity other) || !this.isOwner(other);
     }
 
     public int getNextAirUnderwater(int air) {

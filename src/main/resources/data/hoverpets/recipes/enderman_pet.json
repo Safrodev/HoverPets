@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "###",
-    "#E#",
-    "###"
+    "#P#",
+    "PEP",
+    "#P#"
   ],
   "key": {
     "#": {
@@ -11,6 +11,9 @@
     },
     "E": {
       "item": "minecraft:ender_eye"
+    },
+    "P": {
+      "item": "minecraft:ender_pearl"
     }
   },
   "result": {
