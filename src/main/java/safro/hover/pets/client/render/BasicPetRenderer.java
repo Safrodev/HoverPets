@@ -29,7 +29,7 @@ public class BasicPetRenderer extends LivingEntityRenderer<BasePetEntity, BasicP
         float h = getYOffset(entity, g);
         matrixStack.translate(0.0D, (double)(1.5F + h / 2.0F), 0.0D);
         if (entity.getOwner() != null && entity.getOwner() instanceof PlayerEntity player) {
-            this.renderLabelIfPresent(entity, Text.of(player.getDisplayName().getString() + "'s Pet"), matrixStack, vertexConsumerProvider, i);
+            this.renderLabelIfPresent(entity, Text.literal(player.getDisplayName().getString() + Text.translatable("entity.hoverpets.pet_name.suffix").getString()), matrixStack, vertexConsumerProvider, i);
         }
         super.render(entity, f, g, matrixStack, vertexConsumerProvider, i);
     }

@@ -27,8 +27,12 @@
   "item.hoverpets.enderman_pet": "Enderman Pet",
   "entity.hoverpets.slime_pet": "Slime Pet",
   "item.hoverpets.slime_pet": "Slime Pet",
+  
+  "entity.hoverpets.pet_name.suffix": "'s Pet",
 
   "tooltip.hoverpets.shift": "Hold Shift for More Info",
+  "tooltip.hoverpets.shift.perk": "Perk: ",
+  "tooltip.hoverpets.shift.ability": "Ability: ",
   "tooltip.hoverpets.one_pet": "You may only have one pet at a time!",
   "tooltip.hoverpets.no_permission": "You don't have permission to use this pet!",
 
