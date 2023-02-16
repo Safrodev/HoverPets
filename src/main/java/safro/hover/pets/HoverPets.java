@@ -24,9 +24,7 @@ public class HoverPets implements ModInitializer {
 		ItemRegistry.init();
 		NetworkRegistry.init();
 
-		CommandRegistrationCallback.EVENT.register((dispatcher, access, environment) -> {
-			RemovePetCommand.register(dispatcher);
-		});
+		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated, env) -> RemovePetCommand.register(dispatcher));
 	}
 
 }

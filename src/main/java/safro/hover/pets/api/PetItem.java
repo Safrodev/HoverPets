@@ -74,10 +74,12 @@ public class PetItem extends Item {
                 tooltip.add(Text.translatable("tooltip.hoverpets.shift").formatted(Formatting.GRAY));
             } else {
                 if (this.perkLore != null) {
+                    tooltip.add(Text.literal("Perk:").formatted(Formatting.WHITE));
                     tooltip.add(Text.literal(Text.translatable("tooltip.hoverpets.shift.perk").getString()).formatted(Formatting.WHITE));
                     tooltip.add(Text.literal("" + Formatting.AQUA + I18n.translate(this.perkLore)));
                 }
                 if (this.abilityLore != null) {
+                    tooltip.add(Text.literal("Ability:").formatted(Formatting.WHITE));
                     tooltip.add(Text.literal(Text.translatable("tooltip.hoverpets.shift.ability").getString()).formatted(Formatting.WHITE));
                     tooltip.add(Text.literal("" + Formatting.YELLOW + I18n.translate(this.abilityLore)));
                 }
