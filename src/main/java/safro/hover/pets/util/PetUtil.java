@@ -53,8 +53,4 @@ public class PetUtil {
     public static BasePetEntity getPet(PlayerEntity player) {
         return ComponentsRegistry.PET_COMPONENT.get(player).getPet();
     }
-
-    public static boolean isMoving(PlayerEntity player) {
-        return (player.prevX != player.getX()) || (player.prevZ != player.getZ()) || (player.prevY != player.getY());
-    }
 }

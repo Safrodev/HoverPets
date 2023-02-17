@@ -48,6 +48,7 @@
   "tooltip.hoverpets.panda_pet": "Randomly replenishes a portion of your hunger",
   "tooltip.hoverpets.witch_pet": "Splashes Villagers, Iron Golems, and Players with healing potions",
   "tooltip.hoverpets.enderman_pet": "Teleports you 10 blocks forward when pressing the Pet Key. Cooldown: 5s",
+  "tooltip.hoverpets.slime_pet": "Jump high upon pressing the Pet Key. Cooldown: 3s",
 
   "command.hoverpets.removepet": "Removed pet for %s",
   "command.hoverpets.removepets": "Removed pets for %s Players",

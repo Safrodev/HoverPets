@@ -17,7 +17,9 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import safro.hover.pets.api.BasePetEntity;
+import safro.hover.pets.pet.goal.WitchPetActiveTargetGoal;
 import safro.hover.pets.registry.ItemRegistry;
+import safro.hover.pets.util.PetUtil;
 
 public class WitchPet extends BasePetEntity implements RangedAttackMob {
 
@@ -31,8 +33,8 @@ public class WitchPet extends BasePetEntity implements RangedAttackMob {
         this.goalSelector.add(2, new ProjectileAttackGoal(this, 1.0D, 60, 10.0F));
         this.goalSelector.add(10, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
         this.goalSelector.add(10, new LookAroundGoal(this));
-        this.targetSelector.add(1, new ActiveTargetGoal(this, LivingEntity.class, 10, false, false, (entity) -> {
-            return entity instanceof IronGolemEntity || entity instanceof PlayerEntity || entity instanceof VillagerEntity;
+        this.targetSelector.add(1, new WitchPetActiveTargetGoal<>(this, LivingEntity.class, 10, false, false, (entity) -> {
+            return (entity instanceof IronGolemEntity || entity instanceof PlayerEntity || entity instanceof VillagerEntity) && entity.getHealth() < entity.getMaxHealth();
         }));
     }
 
@@ -46,10 +48,10 @@ public class WitchPet extends BasePetEntity implements RangedAttackMob {
             Potion potion = Potions.HEALING;
             PotionEntity potionEntity = new PotionEntity(this.world, this);
             potionEntity.setItem(PotionUtil.setPotion(new ItemStack(Items.SPLASH_POTION), potion));
-            potionEntity.setPitch(potionEntity.getPitch() - -20.0F);
+            potionEntity.setPitch(potionEntity.getPitch() + 20.0F);
             potionEntity.setVelocity(d, e + g * 0.2D, f, 0.75F, 8.0F);
             if (!this.isSilent()) {
-                this.world.playSound((PlayerEntity)null, this.getX(), this.getY(), this.getZ(), SoundEvents.ENTITY_SPLASH_POTION_THROW, this.getSoundCategory(), 1.0F, 0.8F + this.random.nextFloat() * 0.4F);
+                this.world.playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.ENTITY_SPLASH_POTION_THROW, this.getSoundCategory(), 1.0F, 0.8F + this.random.nextFloat() * 0.4F);
             }
             this.world.spawnEntity(potionEntity);
         }
@@ -63,5 +65,10 @@ public class WitchPet extends BasePetEntity implements RangedAttackMob {
     @Override
     public void tickPerk(World world, PlayerEntity player) {
 
+    }
+
+    @Override
+    public boolean canTarget(LivingEntity entity) {
+        return (this.hasOwner() && this.getOwner() == entity) || super.canTarget(entity);
     }
 }
