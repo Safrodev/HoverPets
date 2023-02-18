@@ -48,6 +48,7 @@
   "tooltip.hoverpets.panda_pet": "随机补充一部分你的饥饿",
   "tooltip.hoverpets.witch_pet": "用治疗药水溅射村民、铁傀儡和玩家",
   "tooltip.hoverpets.enderman_pet": "当你按下宠物键时将你向前传送十格。冷却：5 秒",
+  "tooltip.hoverpets.slime_pet": "按下宠物键时跳得更高。冷却：3 秒",
 
   "command.hoverpets.removepet": "移除了 %s 的宠物",
   "command.hoverpets.removepets": "移除了 %s 个玩家的宠物",
